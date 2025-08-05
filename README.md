@@ -1,7 +1,28 @@
 # Tauri + Leptos
 
-This template should help get you started developing with Tauri and Leptos.
+```bash
+cargo install cargo-leptos leptosfmt trunk tauri-cli
+rustup target add wasm32-unknown-unknown
+```
 
-## Recommended IDE Setup
+### Arch
+```bash
+sudo pacman -S --needed webkit2gtk-4.1 base-devel curl wget file openssl appmenu-gtk-module libappindicator-gtk3 librsvg xdotool
+```
 
-[VS Code](https://code.visualstudio.com/) + [Tauri](https://marketplace.visualstudio.com/items?itemName=tauri-apps.tauri-vscode) + [rust-analyzer](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer).
+# How do
+
+## Development
+
+```bash
+# Desktop
+cargo tauri dev
+# Android
+cargo tauri ios dev
+# iOS
+cargo tauri ios dev
+```
+
+## Build
+```bash
+cargo tauri build
