@@ -25,4 +25,27 @@ cargo tauri ios dev
 
 ## Build
 ```bash
-cargo tauri build
+
+# windows
+# Do this on windows and don't make it complicated
+tauri build
+
+# android
+# Play store
+cargo tauri android build --aab
+# external
+cargo tauri android build --apk
+
+# universal-apple/ios
+rustup target add aarch64-apple-darwin
+rustup target add x86_64-apple-darwin
+cargo tauri build --no-bundle
+cargo tauri bundle --bundles app --target universal-apple-darwin --config src-tauri/tauri.appstore.conf.json
+
+# bundle for App Store distribution
+cargo tauri build --no-bundle
+cargo tauri bundle --bundles app --config src-tauri/tauri.appstore.conf.json
+
+# bundle for distribution outside the macOS App Store
+cargo tauri build --no-bundle
+cargo tauri build --bundles app,dmg
