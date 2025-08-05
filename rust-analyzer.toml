@@ -1,0 +1,4 @@
+edition = "2024"
+
+[rustfmt]
+overrideCommand = ["leptosfmt", "--stdin", "--rustfmt"]
